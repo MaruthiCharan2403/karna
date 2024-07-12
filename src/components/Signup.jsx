@@ -1,7 +1,7 @@
 import React from 'react';
 import IconCloudDemo from './IconCloudDemo';
 import './css/Login.css';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Signup() {
     const navigate = useNavigate();
@@ -47,7 +47,7 @@ export default function Signup() {
                 
                 <button type="submit" className="button-submit">Submit</button>
                 <div>
-                    <p className="text-center">Already have an account?<a href='/login' className='text-blue'>Login</a></p>
+                    <p className="text-center">Already have an account?<Link to='/login' className='text-blue'>Login</Link></p>
                 </div>
             </form>
         </div>
