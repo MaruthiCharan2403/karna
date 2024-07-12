@@ -6,11 +6,12 @@ import { Link, useNavigate } from 'react-router-dom';
 export default function Login() {
     const navigate = useNavigate();
     return (
-        <div className="login-container">
-            <div className="">
-                <IconCloudDemo/>
+        <div className="container flex justify-evenly items-center flex-wrap">
+            <div>
+                <IconCloudDemo/> 
             </div>
-            <form className="form">
+           <div className='sm:w-[320px] md:[450px] lg:w-[500px]'>
+           <form className="form">
                 <div className="flex-column">
                     <label>Email</label>
                 </div>
@@ -39,6 +40,7 @@ export default function Login() {
                     <p className="text-center">Don't have an account?<Link to='/signup' className='text-blue'> Signup</Link></p>
                 </div>
             </form>
+           </div>
         </div>
     );
 }
