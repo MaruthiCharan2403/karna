@@ -1,7 +1,9 @@
 import React from 'react';
+import BlurFade from './magicui/blur-fade';
 
 export default function Contact() {
     return (
+        <BlurFade delay={0.2}>
         <div className="flex flex-col justify-center min-h-full bg-black">
             <section className="dark:bg-gray-900 flex-grow">
                 <div className="container px-6 py-12 mx-auto">
@@ -98,5 +100,6 @@ export default function Contact() {
             </section>
             
         </div>
+        </BlurFade>
     )
 }

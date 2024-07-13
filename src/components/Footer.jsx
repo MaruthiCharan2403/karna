@@ -12,7 +12,7 @@ export default function Footer() {
 
   return (
     <div>
-      <footer className="bg-black shadow dark:bg-gray-900 mt-4" >
+      <footer className="bg-black shadow dark:bg-gray-900 mt-1" >
         <div className="w-full max-w-screen-xl mx-auto p-1 md:py-8">
           <div className="sm:flex sm:items-center sm:justify-between">
             <Link to='/' className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse" onClick={scrollToTop}>

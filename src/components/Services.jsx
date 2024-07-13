@@ -1,8 +1,11 @@
 import React from 'react';
+import BlurFade from './magicui/blur-fade';
+
 
 export default function Services() {
     return (
-        <div className="bg-black">
+        <BlurFade delay={0.2}>
+            <div className="bg-black">
             <section id="features" className="relative px-6 py-10 md:py-20 md:px-10 border-t border-b border-neutral-900 bg-neutral-900/30">
                 <div className="relative mx-auto max-w-5xl text-center">
                     <span className="text-gray-400 my-3 flex items-center justify-center font-medium uppercase tracking-wider ">
@@ -71,5 +74,6 @@ export default function Services() {
                 <div className="absolute bottom-0 right-0 z-0 h-1/3 w-full" style={{ backgroundImage: 'linear-gradient(to left top, rgba(220, 38, 38, 0.2) 0%, transparent 50%, transparent 100%)', borderColor: 'rgba(92, 79, 240, 0.2)' }}></div>
             </section>
         </div>
+        </BlurFade>
     );
 }

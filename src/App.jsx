@@ -9,6 +9,8 @@ import Footer from './components/Footer'
 import Page404 from './components/Page404'
 import Contact from './components/Contact'
 import Services from './components/Services'
+import PageTransition from './components/PageTransition'
+
 function App() {
 
   return (
@@ -23,6 +25,7 @@ function App() {
           <Route path='/services' element={<Services/>}/>
           <Route path="/" element={<BlurFadeTextDemo />} />
           <Route path="*" element={<Page404/>} />
+          {/* <Route path="/loading_login" element={<Login />} /> */}
         </Routes>
         <Footer/>
       </Router>
