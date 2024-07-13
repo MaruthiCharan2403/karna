@@ -6,10 +6,11 @@ import { Link, useNavigate } from 'react-router-dom';
 export default function Signup() {
     const navigate = useNavigate();
     return (
-        <div className="login-container">
-            <div className="icon-container">
+        <div className="contianer flex justify-evenly items-center flex-wrap">
+            <div>
                 <IconCloudDemo />
             </div>
+            <div className='sm:w-[320px] md:[450px] lg:w-[500px]'>
             <form className="form">
                 <div className="flex-column">
                     <label>Email</label>
@@ -47,9 +48,10 @@ export default function Signup() {
                 
                 <button type="submit" className="button-submit">Submit</button>
                 <div>
-                    <p className="text-center">Already have an account?<Link to='/login' className='text-blue'>Login</Link></p>
+                    <p className="text-center">Already have an account?<Link to='/login' className=' hover:bg-blue-800'>Login</Link></p>
                 </div>
             </form>
+            </div>
         </div>
     );
 }
