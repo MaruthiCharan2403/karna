@@ -10,7 +10,7 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(cors());
-mongoose.connect('mongodb://localhost:27017/karna', { useNewUrlParser: true })
+mongoose.connect('mongodb+srv://yssmc24:24051117@karna.my8lusy.mongodb.net/karna', { useNewUrlParser: true })
     .then(() => console.log('MongoDB connected'))
     .catch(err => console.error('MongoDB connection error:', err));
 app.use('/api/user', userroutes);

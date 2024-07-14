@@ -85,7 +85,7 @@ export default function Login() {
             const response = await axios.post('http://localhost:5000/api/user/login', { username, password });
             const { token } = response.data;
             // Save the token to local storage or context
-            localStorage.setItem('token', token);
+            sessionStorage.setItem('token', token);
             // Navigate to the desired route after successful login
             navigate('/userhome');
         } catch (error) {

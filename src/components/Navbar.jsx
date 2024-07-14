@@ -16,7 +16,7 @@ export default function Navbar() {
 
     const handleLogin = () => {
         try{
-            const isToken = localStorage.getItem('token');
+            const isToken = sessionStorage.getItem('token');
             if(isToken){
                 navigate('/userhome');
             }
@@ -31,7 +31,7 @@ export default function Navbar() {
 
     const handleHome = () => {
         try{
-            const isToken = localStorage.getItem('token');
+            const isToken = sessionStorage.getItem('token');
             if(isToken){
                 navigate('/userhome');
             }
