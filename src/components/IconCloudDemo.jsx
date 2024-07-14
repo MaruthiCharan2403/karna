@@ -1,4 +1,5 @@
 import IconCloud from "./magicui/icon-cloud";
+import React from "react";
 
 const slugs = [
   "typescript",
@@ -33,10 +34,11 @@ const slugs = [
   "figma",
 ];
 
-export default function IconCloudDemo() {
+const IconCloudDemo = () => {
   return (
     <div className="relative flex h-full w-full max-w-[40rem] items-center justify-center overflow-hidden rounded-lg bg-background px-30 pb-20 pt-8 ">
       <IconCloud iconSlugs={slugs} />
     </div>
   );
 }
+export default React.memo(IconCloudDemo);
