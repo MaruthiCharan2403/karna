@@ -1,8 +1,5 @@
 import React from 'react';
-import { NeonGradientCard } from "@/components/magicui/neon-gradient-card";
 import BlurFade from './magicui/blur-fade';
-import GradualSpacing from "@/components/magicui/gradual-spacing";
-import TypingAnimation from './magicui/typing-animation';
 import ShineBorder from './magicui/shine-border';
 
 export default function About() {

@@ -14,7 +14,7 @@ import PageTransition from './components/PageTransition'
 function App() {
 
   return (
-    <>
+    <div>
       <Router>
         <Navbar />
         <Routes>
@@ -29,7 +29,7 @@ function App() {
         </Routes>
         <Footer/>
       </Router>
-    </>
+    </div>
   )
 }
 
