@@ -93,6 +93,8 @@ export default function Login() {
         }
     };
 
+        
+
     return (
         <PageTransition isAnimating={animate} setIsAnimating={setAnimate}>
             <div className="container flex justify-evenly items-center flex-wrap">
