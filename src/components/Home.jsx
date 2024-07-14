@@ -2,7 +2,7 @@ import React from 'react';
 import BlurFade from "./magicui/blur-fade";
 import TypingAnimation from "./magicui/typing-animation";
 import { cn } from "@/lib/utils";
-import ShinyButton from ".magicui/shiny-button";
+import ShinyButton from "./magicui/shiny-button";
 import GridPattern from "./magicui/grid-pattern";
 
 export default function BlurFadeTextDemo() {

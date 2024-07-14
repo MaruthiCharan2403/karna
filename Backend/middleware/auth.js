@@ -1,7 +1,7 @@
-const jwt = require('jsonwebtoken');
-const User = require('../models/User');
+import jwt from 'jsonwebtoken';
+import User from '../models/User.js';
 
-module.exports = async (req, res, next) => {
+const auth = async (req, res, next) => {
   const token = req.header('Authorization');
   if (!token) return res.status(401).send('Access Denied');
 
@@ -13,3 +13,5 @@ module.exports = async (req, res, next) => {
     res.status(400).send('Invalid Token');
   }
 };
+
+export default auth;
