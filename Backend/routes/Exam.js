@@ -100,6 +100,33 @@ router.put('/check/:examId', auth, async (req, res) => {
         res.status(500).send({ error: 'An error occurred while processing your request.' });
     }
 });
+router.get('/getexam/:examId', auth, async (req, res) => {
+    const examId = req.params.examId;
+    try {
+        const exam = await Exam.findById(examId);
+        if (!exam) {
+            return res.status(404).send({ error: 'Exam not found' });
+        }
+        res.send({ questions: exam.questions, examduration: exam.examduration });
+    } catch (error) {
+        console.error('Error:', error);
+        res.status(500).send({ error: 'An error occurred while processing your request.' });
+    }
+
+});
+router.get('/results/:examId', auth, async (req, res) => {
+    const examId = req.params.examId;
+    try {
+        const exam = await Exam.findById(examId);
+        if (!exam) {
+            return res.status(404).send({ error: 'Exam not found' });
+        }
+        res.send({ exam });
+    } catch (error) {
+        console.error('Error:', error);
+        res.status(500).send({ error: 'An error occurred while processing your request.' });
+    }
+});
 
 export default router;
 

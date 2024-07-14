@@ -26,7 +26,7 @@ router.post('/register', async (req, res) => {
     const validPass = await bcrypt.compare(password, user.password);
     if (!validPass) return res.status(400).send('Invalid password');
     const token = jwt.sign({ id: user._id }, '8328211811',{expiresIn: '1h'});
-    res.header('Authorization', token).send(token);
+    res.send({ token });
   });
 
 export default router;

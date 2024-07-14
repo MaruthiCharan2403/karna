@@ -1,7 +1,8 @@
 import React from 'react'
 import BlurFade from './magicui/blur-fade';
-
+import { useNavigate } from 'react-router-dom';
 export default function UserHome() {
+    const navigate = useNavigate();
   return (
     <BlurFade delay={0.2}>
             <div className="bg-black">
@@ -48,7 +49,7 @@ export default function UserHome() {
                         </div>
                         <h3 className="mt-6 text-gray-100">EXAMINATION</h3>
                         <p className="my-4 mb-0 font-normal leading-relaxed tracking-wide text-gray-400">Assess your performance with an AI exam from your PDFs</p>
-                        <button className="bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-md p-2 mt-4">Start Exam</button>
+                        <button className="bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-md p-2 mt-4" onClick={()=>{navigate('/examform')}}>Start Exam</button>
                     </div>
 
                     <div className="rounded-md border  border-blue-800 bg-black p-8 text-center shadow-[5px_5px_50px_rgba(8,_112,_184,_0.7)]">

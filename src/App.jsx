@@ -10,6 +10,9 @@ import Page404 from './components/Page404'
 import Contact from './components/Contact'
 import Services from './components/Services'
 import UserHome from './components/UserHome'
+import Examform from './components/Examform'
+import ExamPage from './components/ExamPage'
+import ResultsPage from './components/Resultspage'
 import PageTransition from './components/PageTransition'
 
 function App() {
@@ -23,6 +26,9 @@ function App() {
           <Route path='/about' element={<About/>}/>
           <Route path="/signup" element={<Signup />} />
           <Route path="/userhome" element={<UserHome />} />
+          <Route path="/examform" element={<Examform />} />
+          <Route path="/exam/:examId" element={<ExamPage />} />
+          <Route path="/results/:examId" element={<ResultsPage />} />
           <Route path='/contact' element={<Contact/>}/>
           <Route path='/services' element={<Services/>}/>
           <Route path="/" element={<BlurFadeTextDemo />} />
