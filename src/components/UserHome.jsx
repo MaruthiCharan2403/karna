@@ -1,15 +1,16 @@
 import React from 'react'
 import BlurFade from './magicui/blur-fade';
-import { useNavigate } from 'react-router-dom';
-export default function UserHome() {
+import { useNavigate , useLocation} from 'react-router-dom';
+export default function UserHome( ) {
     const navigate = useNavigate();
+    const location = useLocation();
   return (
     <BlurFade delay={0.2}>
             <div className="bg-black">
             <section id="features" className="relative px-6 py-10 md:py-20 md:px-10 border-t border-b border-neutral-900 bg-neutral-900/30">
                 <div className="relative mx-auto max-w-5xl text-center">
                     <span className="text-gray-400 my-3 flex items-center justify-center font-medium uppercase tracking-wider ">
-                        Hello User
+                        Hello! Welcome to Karna
                     </span>
                     <h2 className="block w-full bg-gradient-to-b from-white to-gray-400 bg-clip-text font-bold text-transparent text-3xl sm:text-4xl">
                         Choose the below options and start your progress

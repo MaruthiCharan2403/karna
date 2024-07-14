@@ -27,7 +27,7 @@ const Loading = () => {
       {Array.from({ length: 5 }).map((_, i) => (
         <motion.div
           key={i}
-          className={`absolute w-full h-1/5 bg-slate-900 flex items-center justify-center`}
+          className={`absolute w-full h-1/4 bg-slate-950 flex items-center justify-center`}
           initial="initial"
           animate="animate"
           custom={i}

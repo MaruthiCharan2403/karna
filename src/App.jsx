@@ -14,15 +14,16 @@ import Examform from './components/Examform'
 import ExamPage from './components/ExamPage'
 import ResultsPage from './components/Resultspage'
 import PageTransition from './components/PageTransition'
+import { useState } from 'react'
 
 function App() {
-
+  const [log, setLog] = useState(false);
   return (
     <div>
       <Router>
-        <Navbar />
+        <Navbar log={log} setLog={setLog}/>
         <Routes>
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Login setLog={setLog} />} />
           <Route path='/about' element={<About/>}/>
           <Route path="/signup" element={<Signup />} />
           <Route path="/userhome" element={<UserHome />} />
