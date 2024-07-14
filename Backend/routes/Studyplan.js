@@ -22,3 +22,4 @@ router.post('/studyplan', auth, async (req, res) => {
         res.status(500).send({ error: 'An error occurred while processing your request.' });
     }
 });
+export default router;

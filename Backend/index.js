@@ -4,6 +4,7 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import examroutes from './routes/Exam.js'; 
 import userroutes from './routes/Userroutes.js';
+import studyplan from './routes/Studyplan.js';
 
 const app = express();
 
@@ -14,6 +15,7 @@ mongoose.connect('mongodb://localhost:27017/karna', { useNewUrlParser: true })
     .catch(err => console.error('MongoDB connection error:', err));
 app.use('/api/user', userroutes);
 app.use('/api/exam', examroutes);
+app.use('/api/studyplan', studyplan);
 
 app.get('/', (req, res) => {
     res.send('Hello World');
