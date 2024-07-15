@@ -4,6 +4,8 @@ import './css/Login.css';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import PageTransition from './PageTransition';
+import Loader from './Loader';
+
 // import { set } from 'mongoose';
 
 
@@ -12,8 +14,10 @@ export default function Login({ setLog }) {
     const [animate, setAnimate] = useState(true);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [loading, setLoading] = useState(false);
 
     const handleSubmit = async (e) => {
+        setLoading(true);
         e.preventDefault();
         try {
             const response = await axios.post('http://localhost:5000/api/user/login', { username, password });
@@ -26,6 +30,7 @@ export default function Login({ setLog }) {
         } catch (error) {
             console.error('There was a problem with the login operation:', error);
         }
+        setLoading(false);
     };
 
         
@@ -82,6 +87,7 @@ export default function Login({ setLog }) {
                         </div>
                     </form>
                 </div>
+                {loading && <Loader msg={"please wait..."}/>}
             </div>
         </PageTransition>
     );

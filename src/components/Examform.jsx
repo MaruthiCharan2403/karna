@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import Loader from './Loader';
 
 
 const Exam = () => {
   const [extractedText, setExtractedText] = useState('');
   const [examName, setExamName] = useState('');
   const [examDuration, setExamDuration] = useState('');
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const handleFileChange = (event) => {
     const file = event.target.files[0];
@@ -47,6 +49,7 @@ const Exam = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setLoading(true);
 
     try {
         const token = sessionStorage.getItem('token');
@@ -71,6 +74,7 @@ const Exam = () => {
       console.error('Error saving exam:', error);
       // Handle error states or show error message
     }
+    setLoading(false);
   };
 
   return (
@@ -96,7 +100,7 @@ const Exam = () => {
               id="examDuration"
               name="examDuration"
               required
-              className="w-full px-4 py-3 rounded-lg bg-transparent border-2 border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-800 focus:border-transparent"
+              className="w-full px-4 py-3 rounded-lg bg-black border-2 border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-800 focus:border-transparent"
               value={examDuration}
               onChange={(e) => setExamDuration(e.target.value)}
             >
@@ -122,12 +126,13 @@ const Exam = () => {
           
           <button
             type="submit"
-            className="w-full px-4 py-3 bg-gray-700 border-2 border-gray-700 text-gray-400 font-semibold rounded-lg transition duration-300 hover:bg-white hover:text-gray-700 hover:border-white focus:outline-none focus:bg-black focus:text-center focus:border-transparent focus:ring-2 focus:ring-blue-800"
+            className="w-full px-4 py-3 hover:bg-black border-2 border-gray-700 hover:text-white font-semibold rounded-lg transition duration-300 bg-white hover:border-white focus:outline-none focus:bg-black focus:text-center focus:border-transparent focus:ring-2 focus:ring-blue-800"
           >
             Submit
           </button>
         </form>
       </div>
+      {loading && <Loader msg={"creating questions for you!"}/>}
     </div>
   );
 };

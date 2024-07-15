@@ -3,15 +3,20 @@ import IconCloudDemo from './IconCloudDemo';
 import './css/Login.css';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import PageTransition from './PageTransition';
+import Loader from './Loader';
 
 export default function Signup() {
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [animate, setAnimate] = useState(true);
+    const [loading, setLoading] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setLoading(true);
         try {
             const response = await axios.post('http://localhost:5000/api/user/register', { email, username, password });
             console.log('User registered:', response.data);
@@ -20,10 +25,12 @@ export default function Signup() {
             console.error('Error registering user:', error);
             alert('User already exists or registration failed.');
         }
+        setLoading(false);
     };
 
     return (
-        <div className="contianer flex justify-evenly items-center flex-wrap">
+        <PageTransition isAnimating={animate} setIsAnimating={setAnimate}>
+            <div className="contianer flex justify-evenly items-center flex-wrap">
             <div>
                 <IconCloudDemo />
             </div>
@@ -87,6 +94,8 @@ export default function Signup() {
                     </div>
                 </form>
             </div>
+            {loading&&<Loader msg={"The account being created!"}/>}
         </div>
+        </PageTransition>
     );
 }

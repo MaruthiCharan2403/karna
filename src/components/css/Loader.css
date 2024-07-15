@@ -1,0 +1,67 @@
+@keyframes drop {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(80px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+
+  .blur-background {
+    filter: blur(5px);
+  }
+  
+  .lava-lamp {
+    position: relative;
+    width: 30px;
+    height: 60px;
+    background: #fff;
+    border-radius: 25px;
+    overflow: hidden;
+  }
+  
+  .bubble {
+    position: absolute;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    background: linear-gradient(to bottom, #e64980, #ff8787);
+    border-radius: 50%;
+    left: 15px;
+    animation: drop 2s ease-in-out infinite;
+  }
+  .bubble1 {
+    position: absolute;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    background: linear-gradient(to bottom, #82c91e, #3bc9db);
+    border-radius: 50%;
+    left: 1px;
+    animation: drop 3s ease-in-out infinite;
+  }
+  .bubble2 {
+    position: absolute;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    background: linear-gradient(to bottom, #7950f2, #f783ac);
+    border-radius: 50%;
+    left: 30px;
+    animation: drop 1s ease-in-out infinite;
+  }
+  .bubble3 {
+    position: absolute;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    background: linear-gradient(to bottom, #4481eb, #04befe);
+    border-radius: 50%;
+    left: 20px;
+    animation: drop 3s ease-in-out infinite;
+  }
+  

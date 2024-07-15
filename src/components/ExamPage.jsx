@@ -2,11 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useTimer } from 'react-timer-hook';
+import Loader from './Loader';
+
+
 
 const ExamPage = () => {
   const { examId } = useParams();
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [loading, setLoading] = useState(false);
   const [answers, setAnswers] = useState([]);
   const navigate = useNavigate();
 
@@ -69,6 +73,7 @@ const ExamPage = () => {
   };
 
   const handleSubmit = async () => {
+    setLoading(true);
     const token = sessionStorage.getItem('token');
     try {
       const response = await axios.put(`http://localhost:5000/api/exam/check/${examId}`, {
@@ -85,6 +90,7 @@ const ExamPage = () => {
     } catch (error) {
       console.error('Error submitting exam:', error);
     }
+    setLoading(false);
   };
 
   return (
@@ -131,6 +137,7 @@ const ExamPage = () => {
           )}
         </div>
       </div>
+      {loading && <Loader msg={"results are getting generated"} />}
     </div>
   );
 };
