@@ -87,7 +87,7 @@ export default function Login({ setLog }) {
                         </div>
                     </form>
                 </div>
-                {loading && <Loader msg={"please wait..."}/>}
+                {loading && <Loader msg={"Please wait..."}/>}
             </div>
         </PageTransition>
     );

@@ -17,6 +17,7 @@
   
   .lava-lamp {
     position: relative;
+    margin-top: 20px;
     width: 30px;
     height: 60px;
     background: #fff;

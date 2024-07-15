@@ -1,6 +1,7 @@
 import React from 'react';
 import BlurFade from './magicui/blur-fade';
 import ShineBorder from './magicui/shine-border';
+import { MarqueeDemo } from './Marquee';
 
 export default function About() {
     return (
@@ -12,12 +13,13 @@ export default function About() {
                     color={["#A07CFE"]}
                 >
                     <BlurFade delay={0.6} inView className="flex flex-col items-center text-center gap-5">
-                    <span className="pointer-events-none whitespace-pre-wrap text-center text-2xl font-semibold leading-normal text-transparent text-white">
+                        <span className="pointer-events-none whitespace-pre-wrap text-center text-2xl font-semibold leading-normal text-transparent text-white">
                             Revolutionizing the way we assess ourselves and learn new things, we provide innovative tools that can clarify your doubts and support your mental health. Our approach ensures that personal growth is both effective and balanced, fostering a holistic learning experience.      
                         </span>
                     </BlurFade>
                 </ShineBorder>
             </BlurFade>
+            {/* <MarqueeDemo /> */}
         </div>
     );
 }

@@ -137,7 +137,7 @@ const ExamPage = () => {
           )}
         </div>
       </div>
-      {loading && <Loader msg={"results are getting generated"} />}
+      {loading && <Loader msg={"Results are getting generated"} />}
     </div>
   );
 };

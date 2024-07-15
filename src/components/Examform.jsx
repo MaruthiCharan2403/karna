@@ -132,7 +132,7 @@ const Exam = () => {
           </button>
         </form>
       </div>
-      {loading && <Loader msg={"creating questions for you!"}/>}
+      {loading && <Loader msg={"Creating questions for you!"}/>}
     </div>
   );
 };
