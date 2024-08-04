@@ -19,7 +19,7 @@ const ExamPage = () => {
   useEffect(() => {
     const fetchExam = async () => {
       const token = sessionStorage.getItem('token');
-      const response = await axios.get(`http://localhost:5000/api/exam/getexam/${examId}`, {
+      const response = await axios.get(`https://karnabackend-nine.vercel.app/api/exam/getexam/${examId}`, {
         headers: {
           Authorization: `${token}`
         }
@@ -76,7 +76,7 @@ const ExamPage = () => {
     setLoading(true);
     const token = sessionStorage.getItem('token');
     try {
-      const response = await axios.put(`http://localhost:5000/api/exam/check/${examId}`, {
+      const response = await axios.put(`https://karnabackend-nine.vercel.app/api/exam/check/${examId}`, {
         answers: answers
       }, {
         headers: {

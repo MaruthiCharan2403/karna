@@ -53,7 +53,7 @@ const Exam = () => {
 
     try {
         const token = sessionStorage.getItem('token');
-        const response = await axios.post('http://localhost:5000/api/exam/qgen', {
+        const response = await axios.post('https://karnabackend-nine.vercel.app/api/exam/qgen', {
         examname: examName,
         examduration: examDuration,
         examtext: extractedText

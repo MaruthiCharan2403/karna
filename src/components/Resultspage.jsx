@@ -12,7 +12,7 @@ const ResultsPage = () => {
         const fetchExamResults = async () => {
             const token = sessionStorage.getItem('token');
             try {
-                const response = await axios.get(`http://localhost:5000/api/exam/results/${examId}`, {
+                const response = await axios.get(`https://karnabackend-nine.vercel.app/api/exam/results/${examId}`, {
                     headers: {
                         Authorization: `${token}`
                     }
