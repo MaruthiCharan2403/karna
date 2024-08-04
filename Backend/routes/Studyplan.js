@@ -1,7 +1,7 @@
 import express from 'express';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import auth from '../middleware/auth.js';
-const genAI = new GoogleGenerativeAI("AIzaSyCxXQvDYdbn5a5nWs0cpzC--5pSB5ZENt8");
+const genAI = new GoogleGenerativeAI(process.env.GEMINI);
 const router = express.Router();
 router.post('/studyplan', auth, async (req, res) => {
     const {studyplan} = req.body;

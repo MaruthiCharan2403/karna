@@ -35,7 +35,7 @@ export default function UserHome( ) {
                         </div>
                         <h3 className="mt-6 text-gray-100">Study Planner</h3>
                         <p className="my-4 mb-0 font-normal leading-relaxed tracking-wide text-gray-400">Fill up your day plan to get a super and comfortable study plan</p>
-                        <button className="bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-md p-2 mt-4">Start Planning</button>
+                        <button className="bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-md p-2 mt-4" onClick={()=>{navigate('/studyplan')}}>Start Planning</button>
                     </div>
 
                     <div className="rounded-md border  border-blue-800 bg-black p-8 text-center shadow-[5px_5px_50px_rgba(8,_112,_184,_0.7)]">

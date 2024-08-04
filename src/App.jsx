@@ -15,6 +15,7 @@ import ExamPage from './components/ExamPage'
 import ResultsPage from './components/Resultspage'
 import Doubtsolve from './components/Doubtsolve'
 import Loader from './components/Loader'
+import Studyplan from './components/Studyplan'
 import { useState } from 'react'
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
           <Route path="/exam/:examId" element={<ExamPage />} />
           <Route path="/results/:examId" element={<ResultsPage />} />
           <Route path="/doubtsolve" element={<Doubtsolve />} />
+          <Route path="/studyplan" element={<Studyplan />} />
           <Route path='/contact' element={<Contact/>}/>
           <Route path='/services' element={<Services/>}/>
           <Route path="/" element={<BlurFadeTextDemo />} />

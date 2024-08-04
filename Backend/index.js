@@ -7,18 +7,22 @@ import examroutes from './routes/Exam.js';
 import userroutes from './routes/Userroutes.js';
 import doubtsolve from './routes/Doubtsolve.js';
 import studyplan from './routes/Studyplan.js';
+import dotenv from 'dotenv';
+dotenv.config();
+
 
 const app = express();
 
 app.use(bodyParser.json());
 app.use(cors());
+
 app.use(session({
-    secret: 'karna-ai', // Replace with your own secret key
+    secret: process.env.SECRET_KEY, // Replace with your own secret key
     resave: false,
     saveUninitialized: true,
     cookie: { secure: false } // Set to true if using HTTPS
 }));
-mongoose.connect('mongodb+srv://yssmc24:24051117@karna.my8lusy.mongodb.net/karna', { useNewUrlParser: true })
+mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true })
     .then(() => console.log('MongoDB connected'))
     .catch(err => console.error('MongoDB connection error:', err));
 app.use('/api/user', userroutes);

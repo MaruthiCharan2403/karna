@@ -1,7 +1,7 @@
 import express from 'express';
 import { GoogleGenerativeAI } from "@google/generative-ai";
 const router = express.Router();
-const genAI = new GoogleGenerativeAI("AIzaSyCxXQvDYdbn5a5nWs0cpzC--5pSB5ZENt8");
+const genAI = new GoogleGenerativeAI(process.env.GEMINI);
 router.post('/askquestion', async (req, res) => {
     const model = genAI.getGenerativeModel({ model: "gemini-pro" });
     const prompt = req.body.message;
