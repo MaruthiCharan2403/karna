@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css?family=Cairo');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100vh;
+    width: 100%;
+}
+
+.title {
+    text-align: center;
+    color: #FFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 20vh;
+    letter-spacing: 1px;
+    line-height: 2;
+}
+
+
+.chatBox {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    margin-bottom: 100px; /* Space for the fixed search bar */
+}
+
+/* Center message cards horizontally and bring them closer */
+.message {
+    margin-bottom: 20px; /* Space between message cards */
+    padding: 10px 15px;
+    border-radius: 10px;
+    /* max-width: 80%; Reduced maximum width for message cards */
+    clear: both;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.message.user {
+    background-color: #0047AB;
+    color: #FFF;
+    text-align: right;
+    float: right; /* Align user messages to the right */
+    margin-right: 20px; /* Adjusted margin to bring cards closer */
+}
+
+.message.bot {
+    background-color:#808080;
+    color: #FFF;
+    text-align: left;
+    max-width: 80%;
+    float: left; /* Align bot messages to the left */
+    margin-left: 20px; /* Adjusted margin to bring cards closer */
+}
+
+.searchBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    max-width: 70%;
+    padding: 10px;
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+}
+
+.searchButton {
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--gradient-2, linear-gradient(90deg, #2AF598 0%, #009EFD 100%));
+    border: 0;
+    display: inline-block;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+}
+
+/* Hover effect */
+.searchButton:hover {
+    color: #fff;
+    background-color: #1A1A1A;
+    box-shadow: rgba(0, 0, 0, 0.5) 0 10px 20px;
+    transform: translateY(-3px);
+}
+
+/* Button pressing effect */
+.searchButton:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+.searchInput {
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    outline: none;
+    color: white;
+    font-size: 15px;
+    padding: 24px 46px 24px 26px;
+    width: calc(100% - 60px);
+    border-radius: 50px;
+}
+
+.white-mode {
+    text-decoration: none;
+    padding: 7px 10px;
+    background-color: #122;
+    border-radius: 3px;
+    color: #FFF;
+    transition: .35s ease-in-out;
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+    font-family: "Montserrat";
+}
+
+.white-mode:hover {
+    background-color: #FFF;
+    color: #122;
+}
+
+/* Media queries for responsiveness */
+@media only screen and (max-width: 768px) {
+    .searchBox {
+        width: 90%;
+        max-width: 90%;
+    }
+    .searchInput {
+        font-size: 14px;
+        padding: 16px 26px 16px 20px; /* Adjust padding for smaller screens */
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .chatBox {
+        padding: 10px;
+        margin-bottom: 80px; /* Adjust space for search box */
+    }
+
+    .message {
+        max-width: 90%;
+    }
+
+    .message.user,
+    .message.bot {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    .searchBox {
+        width: 100%;
+        left: 0;
+        transform: none;
+        border-radius: 0;
+        bottom: 0;
+        padding: 10px;
+    }
+
+    .searchInput {
+        padding: 14px;
+        font-size: 13px;
+    }
+
+    .searchButton {
+        width: 40px;
+        height: 40px;
+    }
+
+    .white-mode {
+        font-size: 12px;
+        padding: 5px 8px;
+    }
+}
+
+/* Glow Animation */
+.glow {
+    top: -10%;
+    left: -10%;
+    width: 120%;
+    height: 120%;
+    border-radius: 100%;
+}
+
+.glow-1 {
+    animation: glow1 4s linear infinite;
+}
+
+.glow-2 {
+    animation: glow2 4s linear infinite;
+    animation-delay: 100ms;
+}
+
+.glow-3 {
+    animation: glow3 4s linear infinite;
+    animation-delay: 200ms;
+}
+
+.glow-4 {
+    animation: glow4 4s linear infinite;
+    animation-delay: 300ms;
+}
+
+@keyframes glow1 {
+    0% {
+        transform: translate(10%, 10%) scale(1);
+    }
+    25% {
+        transform: translate(-10%, 10%) scale(1);
+    }
+    50% {
+        transform: translate(-10%, -10%) scale(1);
+    }
+    75% {
+        transform: translate(10%, -10%) scale(1);
+    }
+    100% {
+        transform: translate(10%, 10%) scale(1);
+    }
+}
+
+@keyframes glow2 {
+    0% {
+        transform: translate(-10%, -10%) scale(1);
+    }
+    25% {
+        transform: translate(10%, -10%) scale(1);
+    }
+    50% {
+        transform: translate(10%, 10%) scale(1);
+    }
+    75% {
+        transform: translate(-10%, 10%) scale(1);
+    }
+    100% {
+        transform: translate(-10%, -10%) scale(1);
+    }
+}
+
+@keyframes glow3 {
+    0% {
+        transform: translate(-10%, 10%) scale(1);
+    }
+    25% {
+        transform: translate(-10%, -10%) scale(1);
+    }
+    50% {
+        transform: translate(10%, -10%) scale(1);
+    }
+    75% {
+        transform: translate(10%, 10%) scale(1);
+    }
+    100% {
+        transform: translate(-10%, 10%) scale(1);
+    }
+}
+
+@keyframes glow4 {
+    0% {
+        transform: translate(10%, -10%) scale(1);
+    }
+    25% {
+        transform: translate(10%, 10%) scale(1);
+    }
+    50% {
+        transform: translate(-10%, 10%) scale(1);
+    }
+    75% {
+        transform: translate(-10%, -10%) scale(1);
+    }
+    100% {
+        transform: translate(10%, -10%) scale(1);
+    }
+}

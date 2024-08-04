@@ -70,7 +70,7 @@ export default function UserHome( ) {
                         </div>
                         <h3 className="mt-6 text-gray-100">DoubtsGPT</h3>
                         <p className="my-4 mb-0 font-normal leading-relaxed tracking-wide text-gray-400">Solve your doubts with help of GPT and learn new things</p>
-                        <button className="bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-md p-2 mt-4">Solve Doubts</button>
+                        <button className="bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-md p-2 mt-4" onClick={()=>{navigate('/doubtsolve')}}>Solve Doubts</button>
                     </div>
                 </div>
 
