@@ -6,12 +6,8 @@ router.post('/askquestion', async (req, res) => {
     const model = genAI.getGenerativeModel({ model: "gemini-pro" });
     const prompt = req.body.message;
     console.log(prompt);
-    const conversationHistory = req.session.conversationHistory || [];
-    conversationHistory.push(prompt);
-    const result = await model.generateContent(conversationHistory.join(' '));
-    const response = await result.response;
-    const text = await response.text();
-    req.session.conversationHistory = conversationHistory;
+    const text = await model.generateText(prompt);
+    console.log(text);
     res.send({ reply: text });
 });
 export default router;

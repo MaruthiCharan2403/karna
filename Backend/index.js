@@ -15,13 +15,6 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(cors());
-
-app.use(session({
-    secret: process.env.SECRET_KEY, // Replace with your own secret key
-    resave: false,
-    saveUninitialized: true,
-    cookie: { secure: false } // Set to true if using HTTPS
-}));
 mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true })
     .then(() => console.log('MongoDB connected'))
     .catch(err => console.error('MongoDB connection error:', err));
