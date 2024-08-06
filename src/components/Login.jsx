@@ -20,7 +20,7 @@ export default function Login({ setLog }) {
         setLoading(true);
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5000/api/user/login', { username, password });
+            const response = await axios.post('https://karnabackend-nine.vercel.app/api/user/login', { username, password });
             const { token } = response.data;
             // Save the token to local storage or context
             sessionStorage.setItem('token', token);

@@ -18,7 +18,7 @@ export default function Signup() {
         e.preventDefault();
         setLoading(true);
         try {
-            const response = await axios.post('http://localhost:5000/api/user/register', { email, username, password });
+            const response = await axios.post('https://karnabackend-nine.vercel.app/api/user/register', { email, username, password });
             console.log('User registered:', response.data);
             navigate('/login');
         } catch (error) {
