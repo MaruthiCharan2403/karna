@@ -1,11 +1,13 @@
 import React from 'react';
 import BlurFade from "./magicui/blur-fade";
 import TypingAnimation from "./magicui/typing-animation";
+import { useNavigate } from 'react-router-dom';
 import { cn } from "@/lib/utils";
 import ShinyButton from "./magicui/shiny-button";
 import GridPattern from "./magicui/grid-pattern";
 
 export default function BlurFadeTextDemo() {
+  const navigate = useNavigate();
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-black-900 relative overflow-hidden">
       <div className="relative flex flex-col items-center justify-center overflow-hidden bg-background md:shadow-xl w-full h-full">
@@ -18,7 +20,7 @@ export default function BlurFadeTextDemo() {
           className="mt-8 text-2xl font-normal text-white"
           text="Revolutionizing the way we assess ourselves and learn new things."
         />
-        <div className="z-10 flex min-h-[16rem] items-center justify-center">
+        <div className="z-10 flex min-h-[16rem] items-center justify-center" onClick={()=>{navigate('/login')}}>
           <ShinyButton text="Get Started" />
 
 
